@@ -1,7 +1,7 @@
 {
   "name": "direct",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "types": "lib/main.d.ts",
   "license": "MIT",
   "scripts": {
@@ -14,8 +14,7 @@
     "test": "yarn run test:coverage",
     "test:unit": "mocha -r ts-node/register test/**/*.spec.ts --exit",
     "test:coverage": "TS_NODE_COMPILER_OPTIONS='{\"target\":\"es6\"}' nyc --reporter=lcov yarn run test:unit",
-    "heroku-prebuild": "yarn --only=dev",
-    "heroku-postbuild": "cross-env NODE_ENV=production webpack && tsc"
+    "heroku-prebuild": "yarn --only=dev"
   },
   "dependencies": {
     "graphql": "^14.0.2",
